@@ -14,6 +14,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
 ✅ **Memory Optimization**: Explicit GPU management for stability.  
 ✅ **Quantization Handling**: Support for 4-bit models.  
 ✅ **Memory efficiency**: Only 1 model is in the memory at a time. One in 3 remaining model is only loaded when it is called upon. When the next model is loaded, the previous model is automatically unloaded
+
 ✅ **Logging**: Has logging for necessary information
 ```
         print(f"\n🕒 Time: {elapsed:.2f}s | Tokens: {tokens} | ⚡ Tokens/sec: {tps:.2f}")
