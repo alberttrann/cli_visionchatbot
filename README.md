@@ -47,7 +47,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
 - Create and activate virtual environment: python -m venv .venv and .\.venv\Scripts\activate
 - run the script: python qwen2.5.py
 
-## Sample output 
+## Demo 
 ```python
 (.venv) PS F:\qwen2.5vl> python qwen2.5.py
 Using device: cuda
