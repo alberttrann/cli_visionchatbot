@@ -1,10 +1,10 @@
 # Multimodal Chatbot with Model Switching
 
 A Python-based chatbot supporting **text and image inputs** with dynamic switching between four models:  
-- **Qwen2.5-VL 3B** (multimodal)  
-- **Qwen2.5-VL 7B** (multimodal)  
-- **Gemma 3 4B** (text-only, quantized)  
-- **SmolDocling 256M** (multimodal)  
+- **Qwen2.5-VL 3B** (multimodal, 4-bit)  
+- **Qwen2.5-VL 7B** (multimodal, 4-bit)  
+- **Gemma 3 4B** (multimodal, 4-bit)  
+- **SmolDocling 256M** (multimodal, full quant)  
 
 ---
 
@@ -24,7 +24,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
   ```bash
   pip install bitsandbytes pillow accelerate
   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 # Match your CUDA version. Replace cu118 with your setup's version if needed.
-  pip install git+https://github.com/huggingface/transformers.git
+  pip install git+https://github.com/huggingface/transformers.git #This is essential for the Gemma model to work 
   ```
 
 ---
