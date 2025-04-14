@@ -26,7 +26,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
 
 ✅ **Support multi-line input**: You can paste in code snippets with multiple lines, freely type ENTER to write long paragraphs with structured layout as input for the chatbot. 
 
-✅ **Image path detection**: Automatically detects image path, so you can input image as simple as print out the content of all 6 questions in here "C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-06 223447.png"
+✅ **Image path detection**: Automatically detects image path, so you can input image as simple as "print out the content of all 6 questions in here "C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-06 223447.png" "
 
 ---
 
