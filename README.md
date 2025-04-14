@@ -449,6 +449,263 @@ Cleaning up GPU memory...
 Cleanup complete.
 ```
 
+```python
+[Qwen2.5-VL 3B] Enter your prompt:
+solve this "C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-07 121656.png"
+END 
+ -> Preparing input using apply_chat_template for Qwen2.5-VL 3B...
+   Found image: C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-07 121656.png
+   Moving inputs to target device: cuda
+⏳ Generating response...
+
+💬 Response:
+To solve the problem, we need to find the initial position, velocity, and acceleration of the object as functions of time \( t \), and then determine the total distance traveled by the object over the interval \( t \) on \( [0, 8] \).
+
+### Step 1: Find the Initial Position
+The initial position at time \( t = 0 \) is given by substituting \( t = 0 \) into the position function \( s(t) \):
+\[
+s(0) = 3(0)^3 - 40.5(0)^2 + 162(0) = 0
+\]
+So, the initial position is \( s(0) = 0 \).
+
+### Step 2: Find the Velocity
+The velocity \( v(t) \) is the first derivative of the position function \( s(t) \):
+\[
+v(t) = \frac{d}{dt} (3t^3 - 40.5t^2 + 162t) = 9t^2 - 81t + 162
+\]
+
+### Step 3: Find the Acceleration
+The acceleration \( a(t) \) is the second derivative of the position function \( s(t) \):
+\[
+a(t) = \frac{d}{dt} (9t^2 - 81t + 162) = 18t - 81
+\]
+
+### Step 4: Discuss the Motion
+We need to analyze the behavior of the velocity and acceleration functions over the interval \( t \) on \( [0, 8] \).
+
+- **Velocity**: The velocity function \( v(t) = 9t^2 - 81t + 162 \) is a quadratic function that opens upwards. To find the critical points, we set the derivative of the velocity equal to zero:        
+\[
+v'(t) = 18t - 81 = 0 \implies t = \frac{81}{18} = 4.5
+\]
+- **Acceleration**: The acceleration function \( a(t) = 18t - 81 \) is a linear function that decreases with increasing \( t \). Its maximum value occurs at \( t = 4.5 \):
+\[
+a(4.5) = 18(4.5) - 81 = 81 - 81 = 0
+\]
+
+### Step 5: Determine the Total Distance Traveled
+To find the total distance traveled, we need to integrate the absolute value of the velocity function over the interval \( [0, 8] \):
+\[
+\text{Total distance} = \int_0^8 |v(t)| \, dt
+\]
+Since the velocity function changes sign between \( t = 0 \) and \( t = 4.5 \), we need to split the integral at \( t = 4.5 \):
+\[
+|v(t)| =
+\begin{cases}
+9t^2 - 81t + 162 & \text{for } t \in [0, 4.5] \\
+-(9t^2 - 81t + 162) & \text{for } t \in [4.5, 8]
+\end{cases}
+\]
+Thus,
+\[
+\text{Total distance} = \int_0^{4.5} (9t^2 - 81t + 162) \, dt + \int_{4.5}^8 -(9t^2 - 81t + 162) \, dt
+\]
+Simplify the integrals:
+\[
+\int_0^{4.5} (9t^2 - 81t + 162) \, dt = \left[ 3t^3 - \frac{81}{2}t^2 + 162t \right]_0^{4.5} = 3(4.5)^3 - \frac{81}{2}(4.5)^2 + 162(4.5)
+\]
+\[
+= 3 \cdot 91.125 - \frac{81}{2} \cdot 20.25 + 729 = 273.375 - 81.375 + 729 = 901
+\]
+\[
+\int_{4.5}^8 -(9t^2 - 81t + 162) \, dt = -\left[ 3t^3 - \frac{81}{2}t^2 + 162t \right]_{4.5}^8 = -\left( 3(8)^3 - \frac{81}{2}(8)^2 + 162(8) - (3(4.5)^3 - \frac{81}{2}(4.5)^2 + 162(4.5) ) \right)      
+\]
+\[
+= -\left( 3 \cdot 512 - \frac{81}{2} \cdot 64 + 1296 - (273.375 - 81.375 + 729) \right) = -\left( 1536 - 259.2 + 1296 - 901.375 \right)
+\]
+\[
+= -\left( 2530.75 - 901.375 \right) = -1629.375
+\]
+Combine the results:
+\[
+\text{Total distance} = 901 - 1629.375 = 1629.375
+\]
+
+Therefore, the total distance traveled by the object over the interval \( t \) on \( [0, 8] \) is \(\boxed{1629.375}\).
+
+🕒 Time: 106.28s | Tokens: 1321 | ⚡ Tokens/sec: 12.43
+   Input Length: 478 | Output Length: 1321
+   Model Type: image_text | Model Name: Qwen2.5-VL 3B
+   Device: cuda | Model Device: cuda:0
+
+[Qwen2.5-VL 3B] Enter your prompt:
+exit
+👋 Exiting chatbot.
+
+Cleaning up GPU memory...
+Cleanup complete.
+(.venv) PS F:\qwen2.5vl> python qwen2.5.py
+Using device: cuda
+Select a model:
+1 - Qwen2.5-VL 3B
+2 - Qwen2.5-VL 7B
+3 - Gemma 3 4B
+4 - SmolDocling 256M
+Your choice: 2
+
+🔄 Loading model: Qwen2.5-VL 7B ...
+ -> Using original loading logic for Qwen2.5-VL 7B
+✅ Qwen2.5-VL 7B loaded.
+
+   Model parameter device detected: cuda:0
+=== Chatbot (Qwen2.5-VL 7B) ===
+Type 'exit' to quit, 'switch' to change models. Type 'END' to submit multi-line input.
+
+
+[Qwen2.5-VL 7B] Enter your prompt:
+can you explain what's going on "C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-06 124706.png"
+END 
+ -> Preparing input using apply_chat_template for Qwen2.5-VL 7B...
+   Found image: C:\Users\alberttran\Pictures\Screenshots\Screenshot 2025-04-06 124706.png
+   Moving inputs to target device: cuda
+⏳ Generating response...
+
+💬 Response:
+The image appears to be a slide from a presentation about using reinforcement learning (RL) for training models, specifically focusing on the use of verifiable rewards and classical RL techniques like PPO (Proximal Policy Optimization). Here’s a breakdown of the key points:
+
+### Key Points:
+1. **Gold final answers or verifiable constraints:**
+   - The model is trained with gold final answers or verifiable constraints as the primary focus. This means that the model is evaluated based on whether it produces the correct final answer.
+   - Intermediate chains of thoughts or results that do not match these constraints are not considered.
+
+2. **Classical RL with PPO optimization:**
+   - The method uses traditional RL approaches but optimizes the policy using PPO, which is a specific algorithm for improving the performance of a policy in terms of maximizing rewards.
+
+3. **Three datasets used:**
+   - The method was tested using three different datasets, which likely represent different types of problems or tasks for the model to learn from.
+
+### Diagram Explanation:
+- **Training Data:** The process starts with training data.
+- **Prompts:** These prompts are the inputs to the model.
+- **Policy πθ(·):** This represents the learned policy function that maps states to actions. The policy update formula suggests an iterative process where the parameters θ are updated based on the gradient J(πθ) of the policy.
+- **Verifiable Reward:** The reward system rewards the model if the output matches the gold final answer (α) or 0 otherwise.
+- **Scalar Reward ri:** This is a scalar value representing the reward for a specific action ai taken in the state si.
+- **Completions:** These are the outputs generated by the model based on the prompts and the current policy.
+
+### Table Explanation:
+- **Prompt Dataset, Count, Verification:**
+  - **GSM8K Train:** 7,473 examples, verified by exact match against extracted answers.
+  - **MATH Train:** 7,500 examples, also verified by exact match against extracted answers.
+  - **IF Verifiable:** 14,973 examples, verified using prompt-specific verifiers.
+  - **Total:** Summarizing all examples across the datasets.
+
+### Overall:
+The slide outlines a method for training models using RL with PPO optimization, where the model is rewarded based on whether its outputs match known correct answers or satisfy certain constraints. The use of verifiable rewards ensures that the model learns to produce correct outputs. The diagram and table provide a visual representation of how this process works and the specific datasets used for training.
+
+🕒 Time: 235.31s | Tokens: 535 | ⚡ Tokens/sec: 2.27
+   Input Length: 1484 | Output Length: 535
+   Model Type: image_text | Model Name: Qwen2.5-VL 7B
+   Device: cuda | Model Device: cuda:0
+
+[Qwen2.5-VL 7B] Enter your prompt:
+exit 
+👋 Exiting chatbot.
+
+Cleaning up GPU memory...
+Cleanup complete.
+(.venv) PS F:\qwen2.5vl>
+
+
+----Instruction-following demo ----
+[Qwen2.5-VL 7B] Enter your prompt:
+complete this program that satisfy the requirements and templates in this question "F:\qwen2.5vl\resized_image.png"
+END 
+ -> Preparing input using apply_chat_template for Qwen2.5-VL 7B...
+   Found image: F:\qwen2.5vl\resized_image.png
+   Moving inputs to target device: cuda
+⏳ Generating response...
+
+💬 Response:
+To complete the program, we need to write a function that takes in a string of characters from the user using the `getstr` function provided as a hint and then prints out the entered string.
+
+Here's the complete program:
+
+```c
+#include <stdio.h>
+
+// Function to read a string from the user
+void getstr(char s[], int max) {
+    int i, c;
+    i = 0;
+    while ((c = getchar()) != '\n' && c != EOF)
+        if (i < max)
+            s[i++] = (char) c;
+    s[i] = '\0';
+}
+
+int main() {
+    char str[100]; // Assuming the maximum length of the string is 99 characters + null terminator
+
+    // Call the getstr function to read the string
+    printf("Enter a string: ");
+    getstr(str, sizeof(str));
+
+    // Print the entered string
+    printf("You entered: %s\n", str);
+
+    return 0;
+}
+
+### Explanation:
+1. **Function `getstr`:**
+   - This function reads characters from the standard input until it encounters a newline character (`'\n'`) or the end-of-file indicator (`EOF`).
+   - It stops reading when either condition is met.
+   - The function appends a null byte (`'\0'`) at the end of the array to mark the end of the string.
+
+2. **Main Function:**
+   - A character array `str` is declared with a maximum size of 100 bytes to accommodate the entered string plus the null terminator.
+   - The `printf` function prompts the user to enter a string.
+   - The `getstr` function is called to read the string from the user.
+   - Finally, the entered string is printed using another `printf` statement.
+
+This program ensures that the user can enter a string, which is then stored in the `str` array, and the contents of the array are printed to the console.
+
+🕒 Time: 185.73s | Tokens: 416 | ⚡ Tokens/sec: 2.24
+   Input Length: 357 | Output Length: 416
+   Model Type: image_text | Model Name: Qwen2.5-VL 7B
+   Device: cuda | Model Device: cuda:0
+
+[Qwen2.5-VL 7B] Enter your prompt:
+explain k-means algorithm to a high-schooler
+END 
+ -> Preparing input using apply_chat_template for Qwen2.5-VL 7B...
+   Moving inputs to target device: cuda
+⏳ Generating response...
+
+💬 Response:
+Sure! Let's imagine you have a bunch of colored marbles, and you want to group them into clusters based on their color. The K-means algorithm is like a fun way to do that!       
+
+Here’s how it works:
+
+1. **Choose the number of clusters (K):** First, decide how many different groups or "clusters" you want to make. For example, you might decide to put all the marbles into 3 groups.
+
+2. **Randomly pick some marbles as your starting points:** These marbles will be the "centers" or "means" of each cluster. In the real world, these centers could be represented by numbers, but for marbles, they’re just the actual marbles themselves!
+
+3. **Assign marbles to the closest center:** Now, look at all the marbles and see which one is the closest to each of your centers. Then, put all the marbles that are closest to the first center in a group together, those closest to the second center into another group, and so on. This means you’ve grouped your marbles into clusters based on their closeness.
+
+4. **Move the centers:** Now, take a look at all the marbles in each cluster. The new center for each cluster should be right in the middle of all the marbles in that cluster. So, move each center to where the average marble of its cluster would be if there were no other marbles nearby.
+
+5. **Repeat steps 3 and 4 until things don’t change much anymore:** Keep doing this until the centers stop moving much when you calculate the new ones. When this happens, you’ve found your clusters!
+
+6. **Look at your clusters:** Now, you can see all your marbles sorted into neat groups based on their colors!
+
+That’s the K-means algorithm in a nutshell! It’s a simple way to organize things into groups based on how similar they are to each other.
+
+🕒 Time: 141.62s | Tokens: 399 | ⚡ Tokens/sec: 2.82
+   Input Length: 29 | Output Length: 399
+   Model Type: image_text | Model Name: Qwen2.5-VL 7B
+   Device: cuda | Model Device: cuda:0
+```
+
 ## Code to run one model (Qwen2.5-VL-3B)
 ```python
 import re
