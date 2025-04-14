@@ -13,7 +13,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
 ✅ **Multimodal Support**: All models can smoothly handle both reasoning, structured outputs and image processing  
 ✅ **Memory Optimization**: Explicit GPU management for stability.  
 ✅ **Quantization Handling**: Support for 4-bit models.  
-✅ **Memory efficiency**: Only 1 model is in the memory at a time. One in 3 remaining model is only loaded when it is called upon. When the next model is loaded, the previous model is automatically unloaded
+✅ **Memory efficiency**: Only 1 model is in the memory at a time. One in 3 remaining model is only loaded when it is called upon. When the next model is loaded, the previous model is automatically unloaded. This way you don't need over 16gb of VRAM to load all 4 models in the memory 
 
 ✅ **Logging**: Has logging for necessary information
 ```
