@@ -449,10 +449,6 @@ Cleanup complete.
 
 ## Code to run one model (Qwen2.5-VL-3B)
 ```python
-NOTEPAD ONLINE
-Save your notes - Safe your notes
-
- New note  Share Url...  MD5 Generator  Blog  Icon FB*Your note will be deleted after 20 days if not set password
 import re
 import os
 from transformers import AutoProcessor, AutoModelForImageTextToText
