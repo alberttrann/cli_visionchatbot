@@ -1,27 +1,34 @@
-# cli_visionchatbot
-A lightweight vision chatbot that works in command line interface, combining 4 open-source models under 7B - Qwen2.5-VL-3B and Qwen2.5-VL-7B, both are from Unsloth and quantized to 4 bits; Gemma 3 4b, is also loaded in 4-bit quantization; SmolDocling, a lightweight model in the SmolVLM family which only has 256M parameters
+# Multimodal Chatbot with Model Switching
 
+A Python-based chatbot supporting **text and image inputs** with dynamic switching between four models:  
+- **Qwen2.5-VL 3B** (multimodal)  
+- **Qwen2.5-VL 7B** (multimodal)  
+- **Gemma 3 4B** (text-only, quantized)  
+- **SmolDocling 256M** (multimodal)  
 
-# Create a virtual environment
-python -m venv .venv
-# Activate the virtual environment (Windows)
-.venv\Scripts\activate
-# (Linux/macOS)
-# source .venv/bin/activate
+---
 
-# Install essential packages
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 # Replace cu118
-pip install transformers
-pip install accelerate
-pip install Pillow
-pip install bitsandbytes  # MAKE SURE THIS CUDA/TORCH
-pip install git+https://github.com/huggingface/transformers.git 
+## Features  
+✅ **Dynamic Model Switching**: Change models mid-chat without restarting with a simple "switch" in a new line  
+✅ **Multimodal Support**: All models can smoothly handle both reasoning, structured outputs and image processing  
+✅ **Memory Optimization**: Explicit GPU management for stability.  
+✅ **Quantization Handling**: Support for 4-bit models.  
 
+---
 
-# Install extra components in case these fail
-pip install --upgrade --force-reinstall protobuf
-pip install sentencepiece
-pip install safetensors
+## Requirements  
+- Python 3.10+  
+- GPU with CUDA support
+- CUDA Toolkit  
+- Install dependencies:  
+  ```bash
+  pip install bitsandbytes pillow accelerate
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 # Match your CUDA version. Replace cu118 with your setup's version if needed.
+  pip install git+https://github.com/huggingface/transformers.git
+  ```
 
-# Run the script
-python qwen2.5.py
+---
+
+## Run the script 
+- Create and activate virtual environment: python -m venv .venv and .\.venv\Scripts\activate
+- run the script: python qwen2.5.py
