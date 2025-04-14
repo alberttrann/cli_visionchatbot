@@ -23,6 +23,7 @@ A Python-based chatbot supporting **text and image inputs** with dynamic switchi
         print(f"   Device: {target_device} | Model Device: {current_model.device}")
 ```
 ✅ **Simple navigation**: Pick models with a simple menu-like interface, type switch in a new line to switch model and type exit for exiting the program. 
+
 ✅ **Support multi-line input**: You can paste in code snippets with multiple lines, freely type ENTER to write long paragraphs with structured layout as input for the chatbot. 
 
 ---
