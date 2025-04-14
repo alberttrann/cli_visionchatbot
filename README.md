@@ -1,4 +1,4 @@
-# Multimodal Chatbot with Model Switching
+# Lightwright Command-Line Chatbot with Model Switching
 
 A Python-based chatbot supporting **text and image inputs** with dynamic switching between four models that are lightweight enough to run with less than 8gb of VRAM, but still punch above its weight in multimodal capabilities
 - **Qwen2.5-VL 3B** (multimodal, 4-bit)  
